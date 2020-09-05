@@ -16,6 +16,9 @@ import User from '../components/pages/Users/User';
 import Orders from '../components/pages/Orders/Orders';
 import Order from '../components/pages/Orders/Order';
 import LogList from '../components/pages/Log/LogList';
+import Markeplaces from '../components/pages/MarketPlaces/Marketplaces';
+import Markeplace from '../components/pages/MarketPlaces/Marketplace';
+import Publications from '../components/pages/Publications/Publications';
 
 const App = () => (
   <Router history={history}>
@@ -31,6 +34,9 @@ const App = () => (
           '/orders',
           '/orders/:id',
           '/log',
+          '/marketplaces',
+          '/marketplaces/:id',
+          '/publications',
         ]}
       >
         <Layout>
@@ -42,6 +48,9 @@ const App = () => (
           <Route exact path='/orders' component={Orders} />
           <Route exact path='/orders/:id' component={Order} />
           <Route exact path='/log' component={LogList} />
+          <Route exact path='/marketplaces' component={Markeplaces} />
+          <Route exact path='/marketplaces/:id' component={Markeplace} />
+          <Route exact path='/publications' component={Publications} />
         </Layout>
       </Route>
 

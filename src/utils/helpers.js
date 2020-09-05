@@ -1,4 +1,4 @@
-import { months } from './constants';
+import { months, states } from './constants';
 
 export const mongoDateToString = (mongoDate, onlyDate) => {
   if (mongoDate === 'Sin reporte') return mongoDate;
@@ -17,4 +17,9 @@ export const mongoDateToString = (mongoDate, onlyDate) => {
 
 export const textToInt = (value) => {
   return parseInt(value, 10) || 0;
+};
+
+export const getStatus = (value) => {
+  const status = states.find(({ id }) => id === value);
+  return status.description;
 };

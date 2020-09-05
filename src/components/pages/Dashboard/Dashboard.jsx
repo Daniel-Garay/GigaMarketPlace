@@ -23,7 +23,7 @@ const Dashboard = ({ location }) => {
   useEffect(() => {
     const code = new URLSearchParams(location.search).get('code');
     const userId = user._id;
-    if (code) {
+    if (code && userId) {
       const body = { code, userId };
 
       fetchData(`${config.urlApi}/api/ml/auth`, 'post', null, body).then((res) => {

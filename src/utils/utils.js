@@ -14,30 +14,6 @@ export const getInitials = (fullName) => {
   return initials;
 };
 
-const getChilds = (modules, parent) => {
-  return modules
-    .filter((child) => child.parentId === parent)
-    .map((child) => ({ ...child, childs: getChilds(modules, child._id) }));
-};
-
-export const getMenu = (modules) => {
-  const menu = [];
-  modules
-    .filter((module) => module.level === 0)
-    .sort((a, b) => {
-      if (a.order > b.order) return 1;
-      return -1;
-    })
-    .forEach((module) => {
-      menu.push({
-        ...module,
-        childs: getChilds(modules, module._id),
-      });
-    });
-
-  return menu;
-};
-
 export const debounce = (func, delay) => {
   let timeout;
   return function (...args) {

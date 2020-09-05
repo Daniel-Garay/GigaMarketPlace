@@ -18,6 +18,8 @@ const Menu = () => {
     { id: 1, description: 'Productos', path: '/products' },
     { id: 3, description: 'Usuarios', path: '/users' },
     { id: 4, description: 'Órdenes', path: '/orders' },
+    { id: 5, description: 'Marketplaces', path: '/marketplaces' },
+    { id: 6, description: 'Publicaciones', path: '/publications' },
     { id: 10, description: 'Log', path: '/log' },
   ];
 

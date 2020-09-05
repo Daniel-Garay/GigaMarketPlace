@@ -6,12 +6,13 @@ import config from '../../../utils/config';
 import { LogStyle, Level } from './logStyle';
 
 const LogList = () => {
-  const perPage = 20;
+  const perPage = 40;
   const [page, setPage] = useState(1);
   const [searchBy, setSearchBy] = useState('');
   const [logs, setLogs] = useState([]);
   const [metadata, setMetadata] = useState([]);
   const { total = 0 } = metadata.length > 0 ? metadata[0] : { total: 0 };
+  const pages = Math.ceil(total / perPage);
   const lofRef = useRef(null);
 
   const getLogs = async () => {
@@ -37,8 +38,7 @@ const LogList = () => {
   }, []);
 
   const onScroll = () => {
-    const pages = Math.ceil(total / perPage);
-    if (lofRef.current.scrollTop >= 300) {
+    if (lofRef.current.scrollTop >= 1200 * page + 1) {
       if (page <= pages) {
         setPage(page + 1);
       }
