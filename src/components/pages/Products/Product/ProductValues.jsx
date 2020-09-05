@@ -68,9 +68,7 @@ const ProductValues = ({ register, errors }) => {
           id='values.platform'
           type='text'
           placeholder='Plataforma'
-          reference={register({
-            required: { value: true, message: 'El valor de la plataforma es requerido' },
-          })}
+          reference={register()}
           errors={errors}
           disabled={true}
         />
