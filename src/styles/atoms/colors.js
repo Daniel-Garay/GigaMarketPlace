@@ -2,6 +2,7 @@ export const colors = {
   first: '#405DC4',
   second: '#EB5E28',
   third: '#0079eb',
+  fourth: '#42b3f4',
 };
 
 export const grayscale = {

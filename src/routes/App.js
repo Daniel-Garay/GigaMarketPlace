@@ -19,6 +19,7 @@ import LogList from '../components/pages/Log/LogList';
 import Markeplaces from '../components/pages/MarketPlaces/Marketplaces';
 import Markeplace from '../components/pages/MarketPlaces/Marketplace';
 import Publications from '../components/pages/Publications/Publications';
+import Publication from '../components/pages/Publications/Publication';
 
 const App = () => (
   <Router history={history}>
@@ -37,6 +38,7 @@ const App = () => (
           '/marketplaces',
           '/marketplaces/:id',
           '/publications',
+          '/Publications/:id',
         ]}
       >
         <Layout>
@@ -51,6 +53,7 @@ const App = () => (
           <Route exact path='/marketplaces' component={Markeplaces} />
           <Route exact path='/marketplaces/:id' component={Markeplace} />
           <Route exact path='/publications' component={Publications} />
+          <Route exact path='/publications/:id' component={Publication} />
         </Layout>
       </Route>
 
