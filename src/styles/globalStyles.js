@@ -1,13 +1,17 @@
 import { createGlobalStyle } from 'styled-components';
-import { grayscale } from './atoms/colors';
+import { colors } from './atoms/colors';
+import { fontSizes } from './atoms/variables';
 
 const GlobalStyle = createGlobalStyle`
 
+    @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;700&display=swap');
+
   body {
     margin: 0;
-    font-family: 'AvenirNext-Regular', sans-serif;
-    font-size: 16px;
-    background-color: ${grayscale.white};
+    font-family: 'Spartan', sans-serif;
+    font-size: ${fontSizes.mainSize};
+    background-color: ${colors.white};
   }
 
   *:focus {

@@ -15,7 +15,7 @@ const getUserLocal = () => {
 const initialState = {
   user: getUserLocal(),
   loading: false,
-  menu: false,
+  menu: true,
   notifications: [],
 };
 

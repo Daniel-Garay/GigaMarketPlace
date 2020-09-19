@@ -21,8 +21,11 @@ const Header = () => {
 
   return (
     <HeaderStyle>
-      <div className='left'>
+      {/* <div className='left'>
         {menu ? <FiX onClick={handleClickMenu} /> : <FiMenu onClick={handleClickMenu} />}
+      </div> */}
+      <div className='logo'>
+        <span>GIGA</span>
       </div>
       <div className='right'>
         <FiLogOut onClick={handleClickLogout} />

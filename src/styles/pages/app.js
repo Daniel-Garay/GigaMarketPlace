@@ -1,11 +1,28 @@
 import styled from 'styled-components';
-import device from '../atoms/devices';
+// import device from '../atoms/devices';
+import { grayscale } from '../atoms/colors';
 
-export const ContentApp = styled.div`
-  margin: 0 auto;
-  padding-top: ${(props) => (props.minimalist ? '80px' : '0')};
-
-  ${device.mobile`
-    padding: 20px;
-  `}
+const ContentApp = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: ${grayscale.white};
+  grid-template-areas:
+    'header  header  header'
+    'menu content content'
+    'menu  footer  footer';
+  & .header {
+    grid-area: header;
+  }
+  & .menu {
+    grid-area: menu;
+  }
+  & .content {
+    grid-area: content;
+  }
+  & .footer {
+    grid-area: footer;
+  }
 `;
+
+export default ContentApp;

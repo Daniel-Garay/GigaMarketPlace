@@ -1,15 +1,17 @@
 export const colors = {
-  first: '#405DC4',
+  first: '#721B65',
   second: '#EB5E28',
   third: '#0079eb',
   fourth: '#42b3f4',
+  fiveth: '#856C8B',
 };
 
 export const grayscale = {
   whitelight: '#f7f9fb',
-  white: '#f3f5f9',
+  white: '#FFFFFF',
   graylight: '#e0e1e3',
   gray: '#63717c',
+  graymedium: '#414040',
   graydark: '#3b434a',
   black: 'black',
 };

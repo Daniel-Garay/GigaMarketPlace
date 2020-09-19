@@ -6,7 +6,7 @@ import Menu from '../components/molecules/Menu/Menu';
 import Notifications from '../components/molecules/Notifications/Notifications';
 import GlobalStyle from '../styles/globalStyles';
 import { Loading, Spinner } from '../styles/molecules/loading';
-import { ContentApp } from '../styles/pages/app';
+import ContentApp from '../styles/pages/app';
 
 const Layout = (props) => {
   const { children } = props;
@@ -17,18 +17,22 @@ const Layout = (props) => {
   return (
     <>
       <GlobalStyle />
-      <div className='app'>
-        <Header />
-        <ContentApp>{children}</ContentApp>
-        <Footer />
-        {menu && <Menu />}
-      </div>
-      {notifications.length > 0 && <Notifications notifications={notifications} />}
-      {loading && (
-        <Loading>
-          <Spinner />
-        </Loading>
-      )}
+      <ContentApp>
+        <div className='header'>
+          <Header />
+        </div>
+        <div className='menu'>{menu && <Menu />}</div>
+        <div className='content'>{children}</div>
+        <div className='footer'>
+          <Footer />
+        </div>
+        {notifications.length > 0 && <Notifications notifications={notifications} />}
+        {loading && (
+          <Loading>
+            <Spinner />
+          </Loading>
+        )}
+      </ContentApp>
     </>
   );
 };

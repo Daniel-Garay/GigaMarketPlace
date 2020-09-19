@@ -8,7 +8,7 @@ export const PageStyle = styled.div`
   margin: 0 auto;
   padding-top: ${(props) => (props.contentTop ? '0' : '50px')};
   box-sizing: border-box;
-  color: ${grayscale.gray};
+  color: ${grayscale.white};
 
   :last-child {
     margin-bottom: 70px;
@@ -56,7 +56,6 @@ export const PageStyle = styled.div`
 
 export const Content = styled.div`
   background-color: ${(props) => (props.transparent ? 'transparent' : 'white')};
-  box-shadow: 9px 9px 8px -10px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   margin-top: 40px;
   padding: 30px;
