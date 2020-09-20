@@ -5,7 +5,7 @@ import { grayscale } from '../atoms/colors';
 const ContentApp = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 20% 1fr 1fr;
   background: ${grayscale.white};
   grid-template-areas:
     'header  header  header'

@@ -10,8 +10,10 @@ import {
   FiArrowUpCircle,
   FaExclamation,
   MdKeyboardArrowRight,
+  HiArrowCircleLeft,
 } from 'react-icons/all';
 // import { changeMenu } from '../../../actions';
+
 import MenuStyle from './menuStyle';
 
 const Menu = () => {
@@ -36,14 +38,17 @@ const Menu = () => {
   return (
     <MenuStyle>
       <div className='container'>
+        <div className='actionExpand'>
+          <HiArrowCircleLeft />
+        </div>
         <nav>
-          {options.map(({ option, id, description, icon }) => (
+          {options.map(({ id, description, icon, path }) => (
             <div
               key={id}
               className='item-menu '
               role='button'
               tabIndex='0'
-              onClick={() => handleClickOption(option.path)}
+              onClick={() => handleClickOption(path)}
             >
               <div className='icon-letf'>
                 {icon}
