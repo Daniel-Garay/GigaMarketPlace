@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import {
   displays,
   setStyledText,
@@ -7,6 +7,15 @@ import {
   scaleWeight,
 } from '../../../styles/atoms/variables';
 import { grayscale, colors } from '../../../styles/atoms/colors';
+
+const styledHover = css`
+  background: ${colors.fiveth};
+  color: ${grayscale.white};
+  transition: all ease-out 200ms;
+  & svg {
+    color: ${grayscale.white};
+  }
+`;
 
 const MenuStyle = styled.div`
   width: 100vw;
@@ -30,7 +39,7 @@ const MenuStyle = styled.div`
       ${displays.flexColumn};
       align-items: flex-start;
       gap: 0.5em;
-      & > div.item-menu {
+      & > .item-menu {
         cursor: pointer;
         height: 50px;
         ${displays.flexBase};
@@ -52,13 +61,13 @@ const MenuStyle = styled.div`
           font-size: ${fontSizes.fourthSize};
         }
         &:hover {
-          background: ${colors.fiveth};
-          color: ${grayscale.white};
-          transition: all ease-out 200ms;
-          & svg {
-            color: ${grayscale.white};
-          }
+          ${styledHover};
+          text-decoration: none;
         }
+      }
+
+      & .select-option {
+        ${styledHover};
       }
     }
   }

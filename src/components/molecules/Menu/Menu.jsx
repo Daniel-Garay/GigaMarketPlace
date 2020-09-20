@@ -1,6 +1,6 @@
-import React, { useCallback } from 'react';
-import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import React from 'react';
+// import { useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import {
   MdDashboard,
   FaBoxOpen,
@@ -17,13 +17,12 @@ import {
 import MenuStyle from './menuStyle';
 
 const Menu = () => {
-  const dispatch = useDispatch();
-  const history = useHistory();
+  // const dispatch = useDispatch();
 
-  const handleClickOption = useCallback((option) => {
-    history.push(option);
-    // dispatch(changeMenu());
-  }, []);
+  // const handleClickOption = useCallback((option) => {
+  //   history.push(option);
+  //   // dispatch(changeMenu());
+  // }, []);
 
   const options = [
     { id: 0, description: 'Dashboard', path: '/dashboard', icon: <MdDashboard /> },
@@ -38,17 +37,18 @@ const Menu = () => {
   return (
     <MenuStyle>
       <div className='container'>
-        <div className='actionExpand'>
+        {/* <div className='actionExpand'>
           <HiArrowCircleLeft />
-        </div>
+        </div> */}
         <nav>
           {options.map(({ id, description, icon, path }) => (
-            <div
+            <NavLink
               key={id}
               className='item-menu '
               role='button'
               tabIndex='0'
-              onClick={() => handleClickOption(path)}
+              to={path}
+              activeClassName='select-option'
             >
               <div className='icon-letf'>
                 {icon}
@@ -57,7 +57,7 @@ const Menu = () => {
               <div className='icon-rigth'>
                 <MdKeyboardArrowRight />
               </div>
-            </div>
+            </NavLink>
           ))}
         </nav>
       </div>
