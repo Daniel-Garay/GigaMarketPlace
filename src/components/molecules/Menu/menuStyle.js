@@ -27,7 +27,9 @@ const MenuStyle = styled.div`
   & .container {
     margin-top: 100px;
     width: 220px;
+    overflow: hidden;
     height: 100vh;
+    transition: all 0.1s ease-in-out;
     ${setStyledText({
       color: grayscale.graymedium,
       fontSize: fontSizes.secondSize,
@@ -38,7 +40,6 @@ const MenuStyle = styled.div`
     & nav {
       ${displays.flexColumn};
       align-items: flex-start;
-      gap: 0.5em;
       & > .item-menu {
         cursor: pointer;
         height: 50px;
@@ -47,7 +48,6 @@ const MenuStyle = styled.div`
         justify-content: space-between;
         gap: 1em;
         width: 100%;
-        padding: 0 0.8em;
         & svg {
           color: ${colors.first};
         }
@@ -56,9 +56,13 @@ const MenuStyle = styled.div`
           ${displays.flexBase};
           align-items: center;
           gap: 1em;
+          margin-left: 1em;
         }
-        & .icon-rigth svg {
-          font-size: ${fontSizes.fourthSize};
+        & .icon-rigth {
+          margin-right: 0.5em;
+          & svg {
+            font-size: ${fontSizes.fourthSize};
+          }
         }
         &:hover {
           ${styledHover};
@@ -68,6 +72,32 @@ const MenuStyle = styled.div`
 
       & .select-option {
         ${styledHover};
+      }
+    }
+
+    & .toggle-expand {
+      position: absolute;
+      bottom: 0;
+      height: 40px;
+      width: 200px;
+      border-top: 1px solid ${grayscale.graylight};
+      display: flex;
+      justify-content: flex-end;
+      & svg {
+        margin: 0.5em 0;
+        color: ${grayscale.gray};
+        cursor: pointer;
+      }
+    }
+
+    &.collapse {
+      width: 55px;
+      & .toggle-expand {
+        justify-content: center;
+        width: 55px;
+        & svg {
+          color: ${colors.first};
+        }
       }
     }
   }

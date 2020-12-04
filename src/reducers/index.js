@@ -25,7 +25,7 @@ const reducer = (state = initialState, action) => {
     case 'CHANGE_MENU':
       return {
         ...state,
-        menu: !state.menu,
+        menuExpand: !state.menuExpand,
       };
 
     case 'ADD_NOTIFICATION': {
