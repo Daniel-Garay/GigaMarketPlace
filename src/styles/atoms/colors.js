@@ -4,6 +4,10 @@ export const colors = {
   third: '#0079eb',
   fourth: '#42b3f4',
   fiveth: '#856C8B',
+  seventh: '#5ad75a',
+  eigth: '#ff1919',
+  nineth: '#ff0000',
+  tenth: '#D50F25',
 };
 
 export const grayscale = {

@@ -29,7 +29,7 @@ const MenuStyle = styled.div`
     width: 220px;
     overflow: hidden;
     height: 100vh;
-    transition: all 0.1s ease-in-out;
+    transition: width 0.2s ease-in-out;
     ${setStyledText({
       color: grayscale.graymedium,
       fontSize: fontSizes.secondSize,

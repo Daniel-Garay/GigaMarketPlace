@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// import device from '../atoms/devices';
 import { grayscale } from '../atoms/colors';
 
 const ContentApp = styled.div`
@@ -11,7 +10,7 @@ const ContentApp = styled.div`
     'header  header  header'
     'menu content content'
     'footer  footer  footer';
-  transition: all 0.1s ease-in-out;
+  transition: all 0.2s ease-in-out;
   & .header {
     grid-area: header;
   }
