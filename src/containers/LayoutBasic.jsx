@@ -1,12 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { version } from '../../package.json';
+import packageInfo from '../../package-lock.json';
 import GlobalStyle from '../styles/globalStyles';
 import { Loading, Spinner } from '../styles/molecules/loading';
 import LayoutStyle from './layoutBasicStyle';
 
-const Layout = (props) => {
-  const { children } = props;
+const Layout = ({ children }) => {
   const loading = useSelector(({ loading }) => loading);
 
   return (
@@ -19,7 +18,7 @@ const Layout = (props) => {
         </Loading>
       )}
 
-      <span className='version'>{`v${version}`}</span>
+      <span className='version'>{`v${packageInfo.version}`}</span>
     </LayoutStyle>
   );
 };

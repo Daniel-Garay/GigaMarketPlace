@@ -16,7 +16,7 @@ const SecondaryButton = css`
   border: 1px solid ${colors.seventh};
   color: ${grayscale.white};
 
-  &:hover {
+  &:hover { 
     filter: brightness(1.1);
   }
 `;
